@@ -1,0 +1,7 @@
+DesignOk = true & BesoinOk = true & PrixOk = true := Acheter = true
+Salaire >= 2000 := PrixOk = true
+Autonomie = true & QualiteSonoreOk = true := BesoinOk = true
+Age >= 18 := Jeune = true
+Jeune = true & Sportif = true & AimeMusic = true := Autonomie = true
+SansFil = true & Autonomie = true := DesignOk = true
+AimeMusic = true := QualiteSonoreOk = true

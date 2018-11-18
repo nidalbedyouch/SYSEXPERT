@@ -1,0 +1,5 @@
+AimeMusic = true
+Sportif = true
+Age = 30
+SansFil = true
+Salaire = 2500
