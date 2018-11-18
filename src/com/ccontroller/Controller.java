@@ -64,7 +64,7 @@ public class Controller implements Runnable{
 			}else{
 				moteur.chainagearriere(fait);
 				this.setTree(fait);
-				view.setLabelMessage("But "+but+" chainage avant lancer... "+" ciritere :  "+critere,Color.green);
+				view.setLabelMessage("But "+but+" chainage arrière lancer... "+" ciritere :  "+critere,Color.green);
 			}
 				
 		}
