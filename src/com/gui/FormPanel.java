@@ -53,6 +53,7 @@ public class FormPanel extends JPanel{
 	private JLabel labeladdRule=new JLabel(" ");
 	private JLabel labeladdBut=new JLabel(" ");
 	private JLabel labelMessage=new JLabel(" ");
+	private JLabel labelNotice=new JLabel(" ");
 	private JLabel labelFact=new JLabel("<html>choisissez un fichier fait : </html>");
 	private JLabel labelRegle=new JLabel("<html>choisissez un fichier règle:</html>");
 	
@@ -212,7 +213,7 @@ public class FormPanel extends JPanel{
 		this.add(panelCritere);
 		this.add(panelLancer,"East");
 		this.add(labelMessage);
-
+		this.add(labelNotice);
 	}
 	
 	public void setLabelInfoFait(String text,Color c){
@@ -243,6 +244,11 @@ public class FormPanel extends JPanel{
 	public void setLabelMessage(String text,Color c){
 		this.labelMessage.setForeground(c);
 		this.labelMessage.setText(text);
+	}
+	
+	public void setLabelNotice(String text,Color c){
+		this.labelNotice.setForeground(c);
+		this.labelNotice.setText(text);
 	}
 	
 }

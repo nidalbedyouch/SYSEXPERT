@@ -60,11 +60,11 @@ public class Controller implements Runnable{
 			moteur.setCritere(critere);
 			if(algo=="chainage avant"){
 				moteur.chainageAvant();
-				view.setLabelMessage("But "+but+"chainage avant lancer..."+"ciritere : "+critere,Color.green);
+				view.setLabelMessage("But "+but+" chainage avant lancer... "+" ciritere :  "+critere,Color.green);
 			}else{
 				moteur.chainagearriere(fait);
 				this.setTree(fait);
-				view.setLabelMessage("But "+but+"chainage avant lancer..."+"ciritere : "+critere,Color.green);
+				view.setLabelMessage("But "+but+" chainage avant lancer... "+" ciritere :  "+critere,Color.green);
 			}
 				
 		}
@@ -76,7 +76,7 @@ public class Controller implements Runnable{
 	public void saturerBase(String critere){
 		moteur.setCritere(critere);
 		moteur.chainageAvant();
-		view.setLabelMessage("chainage avant lancer pour saturation de la base..."+"ciritere : "+critere,Color.green);
+		view.setLabelMessage("chainage avant lancer pour saturation de la base... "+" ciritere : "+critere,Color.green);
 	}
 	
 	public void appendText(String text){
@@ -86,7 +86,9 @@ public class Controller implements Runnable{
 	public void addMessage(String text,Color c){
 		view.setLabelMessage(text, c);
 	}
-	
+	public void addNotice(String text,Color c){
+		view.setLabelNotice(text, c);
+	}
 	public void setTree(InterfaceFait fait){
 		view.setTree(new Tree(fait));
 	}

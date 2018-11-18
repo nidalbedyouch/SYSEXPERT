@@ -134,6 +134,9 @@ public class SEGUI extends JFrame implements Observateur{
 	public void setLabelMessage(String text,Color c){
 		this.formPanel.setLabelMessage(text,c);
 	}
+	public void setLabelNotice(String text,Color c){
+		this.formPanel.setLabelNotice(text,c);
+	}
 	
 	public void appendText(String text){
 		textPanel.appendText(text);

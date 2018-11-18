@@ -1,6 +1,7 @@
 package com.moteurInference;
 
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -60,11 +61,18 @@ public class MoteurInferences implements Sujet{
 			
 		}else if(this.mbdf.faitExists(this.mbut)){
 			//but établi
-			this.controller.appendText("*****BUT ETABLI :"+this.mbut.toString());
-			
+			if(this.mbut.evaluer(this.mbdf)){
+				this.controller.appendText("*****BUT ETABLI :"+this.mbut.toString());
+				this.controller.addNotice("Fait établi  : "+this.mbut.toString()+"\n",Color.green);
+			}else{
+				InterfaceFait fait=this.mbdf.chercher(this.mbut.getNom());
+				this.controller.appendText("*******BUT non établi  : "+this.mbut.toString()+" Fait oposé existe déjà "+fait.toString()+"\n");
+				this.controller.addNotice("Fait non établi  : "+this.mbut.toString()+" Fait oposé existe déjà  "+fait.toString()+"\n",Color.red);
+			}
 		}else {
 			//but n'est pas établi
 			this.controller.appendText("*****BUT NON ETABLI :"+this.mbut.toString());	
+			this.controller.addNotice("Fait non établi  : "+this.mbut.toString()+"\n",Color.red);
 		}
 	}
 
@@ -74,8 +82,15 @@ public class MoteurInferences implements Sujet{
 		// Cas où le but est déjà dans la base de faits initialement.
 		Vector<InterfaceFait> kids=new Vector<InterfaceFait>();
 		if (this.mbdf.faitExists(F)) {
-			this.controller.appendText("Fait établi (existe dans la base des faits) : "+F.toString()+"\n");
-			return true;
+			if(F.evaluer(this.mbdf)){
+				this.controller.appendText("Fait établi (existe dans la base des faits) : "+F.toString()+"\n");
+				this.controller.addNotice("Fait établi  : "+F.toString()+"\n",Color.green);
+				return true;
+			}
+			InterfaceFait fait=this.mbdf.chercher(F.getNom());
+			this.controller.appendText("Fait non établi  : "+F.toString()+" Fait oposé existe déjà "+fait.toString()+"\n");
+			this.controller.addNotice("Fait non établi  : "+F.toString()+" Fait oposé existe déjà  "+fait.toString()+"\n",Color.red);
+			return false;
 		}else {
 			BaseDeRegles ER = new BaseDeRegles(this.controller); //recuppérer les règles dont la conclusion égale au fait à démontrer
 			for (Regles regle : this.mbdr.getRegles()) {
