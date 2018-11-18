@@ -124,9 +124,11 @@ public class MoteurInferences implements Sujet{
 				this.controller.appendText("=============================================================================\n");
 				if (this.mbut.equals(F)) {
 					this.controller.appendText("Fin de l'algorithme du chaînage arrière. Le but [" + this.mbut.getNom()+ "] est atteint.\n");
+					this.controller.addNotice("Fait établi  : "+this.mbut.toString()+"\n",Color.green);
 				}
 			}else {
 				this.controller.appendText("Fin de l'algorithme du chaînage arrière. Le but [" + F.getNom()+ "] n'a pas étè atteint.\n");
+				this.controller.addNotice("Fait non  établi  : "+this.mbut.toString()+"\n",Color.red);
 				return false;
 			}
 			InterfaceFait.linkFamily(F, kids);
