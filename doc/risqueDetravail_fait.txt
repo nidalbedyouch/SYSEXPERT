@@ -1,0 +1,8 @@
+flitreLumiereBleu = true
+ResolutionCarAdapte = true
+lumiere = 80
+nbTroubleMusculo-Sequelettique = 3
+DurePostion = 2
+nbFormation = 3
+RythmePause = 2
+PasSurveillanceMedicale = true

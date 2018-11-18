@@ -1,0 +1,8 @@
+FatigueVisuel = true & FatiguePosturale = true & OrganisationDuTravail = true := TravailRisque = true
+Luminosite = true & ResolutionCarAdapte = true := FatigueVisuel = true
+Lumiere >= 80 := ecranlumineux = true
+PasfilreBleu = true & ecranlumineux = true := Luminosite = true
+nbTroubleMusculo-Sequelettique >= 2 := MPositionPosteTravail = true
+DurePostion >= 1 := PositionInchange = true
+MPositionPosteTravail = true & PositionInchange = true := FatiguePosturale = true
+nbFormation <= 4 & RythmePause <= 3 & PasSurveillanceMedicale = true := OrganisationDuTravail = true
