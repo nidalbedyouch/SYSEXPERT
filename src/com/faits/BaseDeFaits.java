@@ -64,5 +64,10 @@ public class BaseDeFaits {
 		
 		return str; 
 	}
+
+	public boolean vide() {
+		// TODO Auto-generated method stub
+		return this.faits.isEmpty();
+	}
 	
 }

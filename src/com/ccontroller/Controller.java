@@ -97,5 +97,9 @@ public class Controller implements Runnable{
 		// TODO Auto-generated method stub
 		
 	}
+	public void resetBase() {
+		moteur.resetBase();
+		this.addMessage("Base réinitialiser", Color.green);
+	}
 
 }

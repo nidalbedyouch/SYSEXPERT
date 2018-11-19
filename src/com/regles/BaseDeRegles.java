@@ -129,5 +129,10 @@ public class BaseDeRegles {
 		return r;
 	}
 
+
+	public boolean vide() {
+		return this.regles.isEmpty();
+	}
+
 	
 }

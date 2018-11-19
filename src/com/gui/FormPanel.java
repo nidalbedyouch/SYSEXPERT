@@ -38,6 +38,7 @@ public class FormPanel extends JPanel{
 	private JButton addRegle= new JButton("ajout règle");
 	private JButton prouverBut= new JButton("Prouver But");
 	private JButton saturer= new JButton("Saturer la base");
+	private JButton reset= new JButton("Réinitialiser la base");
 	private JTextField nomfB=new JTextField();
 	private JTextField nomRegle=new JTextField();
 	private JTextField faitBut=new JTextField();
@@ -135,6 +136,7 @@ public class FormPanel extends JPanel{
 				
 		panelLancer.add(prouverBut);
 		panelLancer.add(saturer);
+		panelLancer.add(reset);
 				
 				
 		//set listeners
@@ -198,6 +200,12 @@ public class FormPanel extends JPanel{
 		saturer.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent event){
 				controller.saturerBase(String.valueOf(criteres.getSelectedItem()));
+			}
+		});		
+		
+		reset.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent event){
+				controller.resetBase();
 			}
 		});		
 				
