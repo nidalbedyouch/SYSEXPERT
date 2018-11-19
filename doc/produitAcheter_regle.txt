@@ -1,4 +1,5 @@
 DesignOk = true & BesoinOk = true & PrixOk = true := Acheter = true
+SansFil = true & Autonomie = true & BesoinOk = true & PrixOk = true := Acheter = true
 Salaire >= 2000 := PrixOk = true
 Autonomie = true & QualiteSonoreOk = true := BesoinOk = true
 Age >= 18 := Jeune = true

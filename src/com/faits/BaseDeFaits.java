@@ -24,10 +24,14 @@ public class BaseDeFaits {
 	}
 	
 	public void ajouterFait(InterfaceFait pFait) {
-		if(!faitExists(pFait))
-			this.faits.add(pFait);
-		else
-			this.controller.addMessage("fait existe déjà",Color.ORANGE);
+		if(!faitExists(pFait)){
+				this.faits.add(pFait);
+				this.controller.addMessage("fait ajouté",Color.green);
+		}else if(!pFait.evaluer(this)){
+				this.controller.addMessage("fait oposé existe déjà",Color.red);
+			}
+			else
+				this.controller.addMessage("fait existe déjà",Color.ORANGE);
 	}
 	
 	public InterfaceFait chercher(String nom) {

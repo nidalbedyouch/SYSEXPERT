@@ -36,10 +36,6 @@ public class MoteurInferences implements Sujet{
 
 	public void chainageAvant() {
 		//en profondeur
-		if(this.mbdf.vide() || this.mbdr.vide()){
-			this.controller.addNotice("Base de connaissance vide \n",Color.red);
-			return;
-		}
 		this.controller.appendText(this.mbdf.toString());
 		BaseDeRegles bdr=this.mbdr;
 		this.controller.appendText(bdr.toString());
